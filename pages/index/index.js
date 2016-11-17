@@ -40,7 +40,7 @@ Page({
   //  console.log("scroll")
   //},
 
-  //网络请求数据, 实现首页刷新
+  //网络请求数据, 实现首页刷新。暂未实现。
   refresh0: function(){
     var index_api = '';
     util.getData(index_api)

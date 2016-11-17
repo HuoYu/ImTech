@@ -36,6 +36,7 @@ function getData(url){
       success: function(res) {
         console.log("success")
         resolve(res)
+        
       },
       fail: function (res) {
         reject(res)
@@ -49,6 +50,7 @@ function getData2(){
   return index.index;
 }
 
+//方案：维护一个全局变量，记录下拉了多少次，这个值返回给服务器，服务器才知道该返回从哪到哪的记录，当然在页面刷新时，这个值需要更新为0；
 function getNext(){
   return index_next.next;
 }
