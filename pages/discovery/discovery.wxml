@@ -20,31 +20,41 @@
       <view class="feed-item">
         <view class="feed-source">
           <a class="">
-            <view class="avatar">
-              <image src="{{item.feed_source_img}}"></image>
+            <view class="avatar" wx:if="{{item.avatar_file.length > 43}}">
+              <image src="{{item.avatar_file}}"></image>   <!-- 作者头像 -->
             </view>
-            <text>{{item.feed_source_name}}</text>
+            <view class="avatar" wx:else>
+              <image src="../../images/icon1.jpeg"></image>   <!-- 当返回的链接的长度小于等于43时选择默认头像 -->
+            </view>
+            <text>{{item.user_name}}</text>    <!-- 作者名称 -->
+            <text>来自话题: {{item.category_name}}</text>
           </a>
         </view>
         <view class="feed-content">
-          <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
+          <view class="question" qid="{{article_id}}" bindtap="bindQueTap">     <!-- 文章id -->
             <a class="question-link">
-              <text>{{item.question}}</text>
+              <text>{{item.title}}</text>     <!-- 文章标题 -->
             </a>
           </view>
           <view class="answer-body">
             <view bindtap="bindItemTap">
-              <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+              <text class="answer-txt" aid="{{article_id}}">{{item.content}}</text>    <!-- 文章id -->    <!-- 文章内容 -->
             </view>
             <view class="answer-actions" bindtap="bindItemTap">
+             <view class="view dot">
+                <a>{{item.view_num}} 浏览 </a>    <!-- 浏览数 -->  
+              </view>
               <view class="like dot">
-                <a>{{item.good_num}} 赞同 </a>
+                <a>{{item.vote_num}} 赞同 </a>    <!-- 赞数 -->  
               </view>
               <view class="comments dot">
-                <a>{{item.comment_num}} 评论 </a>
+                <a>{{item.comment_num}} 评论 </a>   <!-- 评论数 -->  
               </view>
-              <view class="follow-it">
-                <a>关注问题</a>
+              <!--<view class="follow-it dot">
+                <a>关注问题</a> 
+              </view>-->
+              <view class="time">
+                <a>{{item.time}}</a>   <!-- 时间 -->  
               </view>
             </view>
           </view>

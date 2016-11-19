@@ -6,7 +6,8 @@
     "pages/chat/chat",
     "pages/more/more",
     "pages/answer/answer",
-    "pages/question/question"
+    "pages/question/question",
+    "pages/article/article"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -46,5 +47,5 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": false
 }

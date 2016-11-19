@@ -1,0 +1,102 @@
+<!--question.wxml-->
+<view class="container">
+    <view class="question-wrp">
+        <view class="question-item">
+            <view class="que-tag">
+                <text class="tag"> {{feed[0].category_name}}</text>
+            </view>
+
+            <view class="que-title">      <!-- 文章标题 -->
+                {{feed[0].title}}
+            </view>
+            <view class="que-content">   <!-- 文章内容 -->
+                {{feed[0].content}}
+            </view>
+            <view class="que-follow">
+                <view class="left">
+                    <view class="watch">
+                        <image src="../../images/eye.png"></image>
+                        <text>{{feed[0].view_num}}</text>   <!-- 浏览数 -->
+                    </view>
+                    <view class="good">
+                        <image src="../../images/good.png"></image>
+                        <text>{{feed[0].vote_num}}</text>   <!-- 点赞数 -->
+                    </view>
+                    <view class="comment">
+                        <image src="../../images/comment2.png"></image>
+                        <text>{{feed[0].comment_num}}</text>    <!-- 评论数 -->
+                    </view>
+                </view>
+                <view class="right">
+                    关注
+                </view>
+            </view>
+        </view>
+        <view class="que-operate flex-wrp">
+            <view class="invite flex-item">
+                <image src="../../images/invite.png"></image>
+                <text>邀请回答</text>
+            </view>
+            <view class="write flex-item">
+                <image src="../../images/write.png"></image>
+                <text>写回答</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-feed">
+      <block wx:for="{{feed[0].comments}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <view class="feed-item">  
+            <view class="feed-source">
+                <a class="" bindTap="">
+                    <view class="avatar">
+                        <image src="{{item.avatar_file_2}}"></image>
+                    </view>
+                    <text>{{item.user_name_2}}</text>
+                </a>
+            </view>
+            <view class="feed-content">
+                <view class="answer-body">
+                    <view>
+                        <text class="answer-txt">{{item.content_2}} </text>
+                    </view>
+                    <view class="answer-actions">
+                        <view class="like dot">
+                            <a>{{item.vote_num_2}}赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>{{item.comment_num_2}}评论 </a>
+                        </view>
+                        <view class="time">
+                            <a>{{item.time_2}}</a>
+                        </view>
+                    </view>
+                    <view>  <!-- 对评论的回复。此处需要写个前端css，弄好看些-->
+                      <block wx:for="{{item.comments_2}}" wx:for-index="idx" wx:for-item="item_2" data-idx="{{idx}}">
+                        <view class="feed-source">
+                            <a class="" bindTap="">
+                                <view class="avatar">
+                                     <image src="{{item_2.avatar_file_3}}"></image>
+                                </view>
+                                <text>{{item_2.user_name_3}}</text>
+                                <text>{{item_2.time_3}}</text>
+                            </a>
+                        </view>
+                        <view class="feed-content">
+                           <view class="answer-body">
+                               <view>
+                               <text class="answer-txt">{{item_2.content_3}}</text>
+                               </view>
+                           </view>
+                        </view>
+                        
+                     </block>
+                    </view>
+                    
+                </view>
+            </view>
+        </view>
+     
+      </block>
+    </view>
+</view>
+

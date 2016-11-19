@@ -46,6 +46,7 @@ function getData(url){
   })
 }
 
+
 function getData2(){
   return index.index;
 }
@@ -63,14 +64,11 @@ function discoveryNext(){
   return discovery_next.next;
 }
 
-
-
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
-
 
 
 
