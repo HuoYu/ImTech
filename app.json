@@ -12,7 +12,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#0068C4",
-    "navigationBarTitleText": "ImTech",
+    "navigationBarTitleText": "南大信管-ImTech",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh":true
   },

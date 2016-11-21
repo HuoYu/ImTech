@@ -32,14 +32,16 @@ Page({
     });
   },
 
-  bindItemTap: function() {
+  bindItemTap: function(e) {
+    let param = e.currentTarget.dataset, id = param.id
     wx.navigateTo({
-      url: '../article/article'
+      url: '../article/article?id='+id
     })
   },
-  bindQueTap: function() {
+  bindQueTap: function(e) {
+    let param = e.currentTarget.dataset, id = param.id
     wx.navigateTo({
-      url: '../article/article'
+      url: '../article/article?id='+id
     })
   },
   upper: function () {
